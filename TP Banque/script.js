@@ -43,6 +43,6 @@ function agios() {
     while (day <= 0 || day > 365) {
         day = Number(prompt("Entrez le nombre de jour"));
     }
-    let result = decouvert * day * 0.1 / 365;
+    let result = (sold * -1) * day * 0.1 / 365;
     document.getElementById("show").innerHTML = "Agios: " + result.toFixed(2);
 }
