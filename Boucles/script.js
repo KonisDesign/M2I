@@ -36,7 +36,7 @@ function county77() {
             for (let i = 0; i < 800; i++) {
                 let mydata = data[i].Code_postal;
                 let str = mydata.toString();
-                if (str.substring(0, 1) == '7') {
+                if (str.substring(0, 2) == '77') {
                     result = result + str + "<br>";
                     document.getElementById("boucles").innerHTML = result;
                 } else {
@@ -49,4 +49,16 @@ function county77() {
             console.error('Error:', error);
         });
 
+}
+
+function tree() {
+    result = "";
+    let star = "";
+
+    while (star.length != 5) {
+        star = star + "*";
+        result = result + star + "<br>";
+    }
+
+    document.getElementById("boucles").innerHTML = result;
 }
