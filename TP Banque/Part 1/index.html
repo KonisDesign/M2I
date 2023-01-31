@@ -4,12 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TP Banque part 1 - Agios</title>
+    <link rel="stylesheet" href="style.css">
+    <title>TP Banque</title>
 </head>
 <body>
-    <p>Bienvenue chez GTM Bank</p>
-    <button onclick="agios()">Agios</button>
-    <div id="show"></div>
+    <header>
+        <p id="overdraft"></p>
+        <p id="usersold"></p>
+    </header>
+    <div class="container">
+        <h1>Bienvenue chez GTM Bank</h1>
+        <button class="start-button" id="open-account-button" onclick="openaccount()">Ouvrir un compte</button>
+        <div class="options">
+            <button class="option-button" id="withdraw-button" onclick="withdraw()">Retrait</button>
+            <button class="option-button" id="agios-button" onclick="agios()">Agios</button>
+        </div>
+        <div id="show"></div>
+    </div>
 </body>
 </html>
 <script src="script.js"></script>

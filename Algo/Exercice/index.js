@@ -1,25 +1,27 @@
-let Lastname = prompt("Nom");
-let Firstname = prompt("Prénom");
-let Age = prompt("Age");
-let MajMin;
+function exercice1et2() {
+  let Lastname = prompt("Nom");
+  let Firstname = prompt("Prénom");
+  let Age = prompt("Age");
+  let MajMin;
 
-if (Age < 18) {
-  MajMin = "Vous êtes mineur.";
-} else if (Age == "18") {
-  MajMin = "Vous avez exactement 18 ans.";
-} else {
-  MajMin = "Vous êtes Majeur.";
+  if (Age < 18) {
+    MajMin = "Vous êtes mineur.";
+  } else if (Age == "18") {
+    MajMin = "Vous avez exactement 18 ans.";
+  } else {
+    MajMin = "Vous êtes Majeur.";
+  }
+
+  document.getElementById("lastname").innerHTML =
+    "Je m'appelle " +
+    Lastname +
+    " " +
+    Firstname +
+    " et j'ai " +
+    Age +
+    " ans.<br>" +
+    MajMin;
 }
-
-document.getElementById("lastname").innerHTML =
-  "Je m'appelle " +
-  Lastname +
-  " " +
-  Firstname +
-  " et j'ai " +
-  Age +
-  " ans.<br>" +
-  MajMin;
 
 function exercice3() {
   let number1 = prompt("Premier nombre");
@@ -72,38 +74,42 @@ function exercice4() {
 
 
 function exercice5() {
-    let number10 = 50;
-    while (number10 < 0 || number10 > 10) {
-        number10 = Number(prompt("Saisissez un nombre compris en 0 et 10"));
-    }
-    document.getElementById("exo5").innerHTML = "Votre nombre est " + number10;
+  let number10 = 50;
+  while (number10 < 0 || number10 > 10) {
+    number10 = Number(prompt("Saisissez un nombre compris en 0 et 10"));
+  }
+  document.getElementById("exo5").innerHTML = "Votre nombre est " + number10;
 }
 
 function exercice6() {
-    let number100 = 101;
-    let result = "";
-    while (number100 < 0 || number100 > 100) {
-        number100 = Number(prompt("Saisissez un nombre inférieur à 100"));
-    }
-    while (number100 != 101) {
-        result = result + number100 + "<br>";
-        number100++;
-    }
-    document.getElementById("exo6").innerHTML = result;
+  let number100 = 101;
+  let result = "";
+  while (number100 < 0 || number100 > 100) {
+    number100 = Number(prompt("Saisissez un nombre inférieur à 100"));
+  }
+  while (number100 != 101) {
+    result = result + number100 + "<br>";
+    number100++;
+  }
+  document.getElementById("exo6").innerHTML = result;
 }
 
 function exercice7() {
-    let notes = [];
-    let valuefromUser = 0;
-    let result = 0;
-    while (valuefromUser != -1) {
-        valuefromUser = Number(prompt("Saisissez une note"));
-        notes.push(valuefromUser);
-    }
-    notes.length--;
-    for (let i = 0; i < notes.length; i++) {
-        result = result + notes[i];
-    }
-    result = result / notes.length;
-    document.getElementById("exo7").innerHTML = "La moyenne de la classe est de " + result;
+  let notes = [];
+  let valuefromUser = 0;
+  let result = 0;
+  while (valuefromUser != -1) {
+    valuefromUser = Number(prompt("Saisissez une note"));
+    notes.push(valuefromUser);
+  }
+  notes.length--;
+  for (let i = 0; i < notes.length; i++) {
+    result = result + notes[i];
+  }
+  result = result / notes.length;
+  document.getElementById("exo7").innerHTML = "La moyenne de la classe est de " + result;
+}
+
+function exercice8() {
+  
 }
