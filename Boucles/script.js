@@ -54,10 +54,25 @@ function county77() {
 function tree() {
     result = "";
     let star = "";
+    let number = "";
+    let i = 1;
 
-    while (star.length != 5) {
-        star = star + "*";
-        result = result + star + "<br>";
+    let randomNumber = Math.floor(Math.random() * 2);;
+
+    if (randomNumber == 0) {
+        while (star.length != 5) {
+            star = star + "*";
+            result = result + star + "<br>";
+        }
+    } else {
+        while (number.length != 5) {
+            number = "";
+            while (number.length != i) {
+                number = number + i.toString();
+            }
+            result = result + number + "<br>";
+            i++;
+        }
     }
 
     document.getElementById("boucles").innerHTML = result;
