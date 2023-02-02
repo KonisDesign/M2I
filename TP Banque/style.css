@@ -131,3 +131,10 @@ header {
     overflow-y: auto;
     overflow-x: hidden;
 }
+
+@media  all and (max-width: 428px) {
+    .tasks-container {
+        width: 90%;
+        left: calc(5%-10px);
+    }
+}
