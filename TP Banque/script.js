@@ -83,7 +83,7 @@ function readtab() {
         mytask = mytask + tasks[i] + "<br>";
         document.getElementById("tasks-show").innerHTML = "<br>" + mytask;
     }
-    document.getElementById("tasks-show").scrollTop = document.getElementById("tasks-show").scrollHeight
+    document.getElementById("tasks-show").scrollTop = document.getElementById("tasks-show").scrollHeight;
 
 }
 

@@ -7,8 +7,15 @@ body {
     margin: 0;
     overflow-x: 0;
     color: #fff;
-    background-color: #222831;
+    /*background-color: #222831;*/
     font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: linear-gradient(-45deg, #222831, #1F6F8B, #222831, #1F6F8B);
+	background-size: 400% 400%;
+	animation: gradient 16s ease infinite;
+	height: 100vh;
 }
 
 .start-button {
@@ -107,7 +114,7 @@ header {
     align-items: flex-start;
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: -80px;
     background-color: #29303b;
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.5);
 }
@@ -115,7 +122,7 @@ header {
 .tasks-container h3 {
     width: 100%;
     min-height: 50px;
-    margin: 0px -10px 10px -10px;
+    margin: 0px -10px;
     padding: 0px 10px;
     display: flex;
     justify-content: center;
@@ -139,7 +146,7 @@ header {
 @media all and (max-width: 428px) {
     .tasks-container {
         width: 90%;
-        right: calc(5% - 10px);
+        right: calc(5% - 110px);
     }
 }
 
@@ -173,4 +180,45 @@ header {
     #tasks-show {
         max-height: 70px;
     }
+}
+
+.slide-left {
+    -webkit-animation: slide-left .5s cubic-bezier(.25, .46, .45, .94) both;
+    animation: slide-left .5s cubic-bezier(.25, .46, .45, .94) both
+}
+
+@-webkit-keyframes slide-left {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+
+    100% {
+        -webkit-transform: translateX(-100px);
+        transform: translateX(-100px)
+    }
+}
+
+@keyframes slide-left {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+
+    100% {
+        -webkit-transform: translateX(-100px);
+        transform: translateX(-100px)
+    }
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
