@@ -5,15 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b9a8cc2a2e.js" crossorigin="anonymous"></script>
     <title>TP Banque</title>
 </head>
 <body>
     <header>
-        <p id="overdraft"></p>
+        <a href="#" id="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Android_O_Preview_Logo.png/1024px-Android_O_Preview_Logo.png"></a>
+        <div class="infos">
+            <p id="overdraft"></p>
         <p id="usersold"></p>
+        <button class="option-button" id="signout-button" onclick="signout()"><i class="fa-solid fa-right-from-bracket"></i></button>
+        </div>
     </header>
     <div class="container">
-        <h1>Bienvenue chez GTM Bank</h1>
+        <h1 id="title">Bienvenue chez GTM Bank</h1>
         <button class="start-button" id="open-account-button" onclick="openaccount()">Ouvrir un compte</button>
         <div class="options">
             <button class="option-button" id="deposit-button" onclick="mydeposit()">Dépôt</button>

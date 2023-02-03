@@ -71,14 +71,38 @@ body {
     display: none;
 }
 
+#signout-button {
+    min-width: 50px;
+    display: none;
+}
+
 header {
     width: 96%;
     height: auto;
     margin-left: 2%;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .infos {
+    width: auto;
+    height: auto;
     display: flex;
     justify-content: right;
     align-items: center;
     gap: 20px;
+}
+
+header #logo {
+    width: auto;
+    height: 80px;
+}
+
+header img {
+    width: auto;
+    height: 100%;
 }
 
 .container {
