@@ -168,6 +168,14 @@ header img {
 }
 
 @media all and (max-width: 428px) {
+    header {
+        justify-content: right;
+    }
+
+    header #logo {
+        display: none;
+    }
+
     .tasks-container {
         width: 90%;
         right: calc(5% - 110px);
