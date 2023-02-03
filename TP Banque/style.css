@@ -132,6 +132,10 @@ header {
     overflow-x: hidden;
 }
 
+#tasks-show::-webkit-scrollbar {
+    display: none;
+}
+
 @media all and (max-width: 428px) {
     .tasks-container {
         width: 90%;
