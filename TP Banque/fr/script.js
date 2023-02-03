@@ -19,6 +19,10 @@ if (sold != null && decouvert != null && tasks != null && nameuser != null) {
     } else {
         document.getElementById("overdraft").innerHTML = "Découvert (€): " + decouvert;
     }
+
+    if (sold < 0) {
+        document.getElementById("agios-button").style.display = "block";
+    }
     
     document.getElementById("title").innerHTML = "Bonjour " + nameuser;
     document.getElementById("open-account-button").style.display = "none";
