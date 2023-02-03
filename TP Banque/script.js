@@ -14,7 +14,12 @@ try {
 
 if (sold != null && decouvert != null && tasks != null && nameuser != null) {
     document.getElementById("usersold").innerHTML = "Solde (€): " + sold;
-    document.getElementById("overdraft").innerHTML = "Découvert (€): " + decouvert;
+    if (decouvert == 0) {
+        document.getElementById("overdraft").innerHTML = "Découvert: non autorisé";
+    } else {
+        document.getElementById("overdraft").innerHTML = "Découvert (€): " + decouvert;
+    }
+    
     document.getElementById("title").innerHTML = "Bonjour " + nameuser;
     document.getElementById("open-account-button").style.display = "none";
     document.getElementById("withdraw-button").style.display = "block";
