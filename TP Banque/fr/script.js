@@ -23,7 +23,7 @@ if (sold != null && decouvert != null && tasks != null && nameuser != null) {
     if (sold < 0) {
         document.getElementById("agios-button").style.display = "block";
     }
-    
+
     document.getElementById("title").innerHTML = "Bonjour " + nameuser;
     document.getElementById("open-account-button").style.display = "none";
     document.getElementById("withdraw-button").style.display = "block";
@@ -38,23 +38,19 @@ if (sold != null && decouvert != null && tasks != null && nameuser != null) {
 }
 
 function openaccount() {
-    nameuser = prompt("Veuillez entrer votre nom et votre prénom");
-    let undecouvert = prompt("Voulez-vous avoir un découvert ?");
-    if (undecouvert == "y" || undecouvert == "Y") {
+    nameuser = document.getElementById("textname").value;
+    let undecouvert = document.getElementById("textdecouvert").value;
+    if (undecouvert.length > 0) {
         tasks.push(getdate() + ": Ajout d'un découvert");
-        while (decouvert > 2000 || decouvert < 100) {
-            decouvert = Number(prompt("Entrez le montant de votre découvert autorisé"));
-            save("mydecouvert", decouvert);
-        }
+        decouvert = Number(document.getElementById("textdecouvert").value);
+        save("mydecouvert", decouvert);
         document.getElementById("overdraft").innerHTML = "Découvert (€): " + decouvert;
         tasks.push(getdate() + ": Montant du découvert autorisé: " + decouvert + "€");
     } else {
         document.getElementById("overdraft").innerHTML = "Découvert: non autorisé";
         tasks.push(getdate() + ": Pas de découvert autorisé");
     }
-    while (sold < 500) {
-        sold = Number(prompt("Saisissez le dépot"));
-    }
+    sold = Number(document.getElementById("textfirstdepot").value);
     tasks.push(getdate() + ": Dépot de " + sold + "€");
     document.getElementById("usersold").innerHTML = "Solde (€): " + sold;
     document.getElementById("title").innerHTML = "Bienvenue " + nameuser;
@@ -63,6 +59,7 @@ function openaccount() {
     document.getElementById("deposit-button").style.display = "block";
     document.getElementById("signout-button").style.display = "block";
     document.getElementById("tasks-container").style.display = "flex";
+    showform("options", "openAccountContainer");
     readtab();
     save("mysold", sold);
     save("myname", nameuser);
@@ -71,9 +68,7 @@ function openaccount() {
 function mydeposit() {
     document.getElementById("show").innerHTML = "";
     let mydeposit = 0;
-    while (mydeposit < 1) {
-        mydeposit = Number(prompt("Saisissez le montant du dépôt"));
-    }
+    mydeposit = Number(document.getElementById("textdepot").value);
     sold += mydeposit;
     document.getElementById("usersold").innerHTML = "Solde (€): " + sold;
     tasks.push(getdate() + ": Dépôt de " + mydeposit + "€");
@@ -83,11 +78,12 @@ function mydeposit() {
     }
     readtab();
     save("mysold", sold);
+    showform("options", "depositContainer");
 }
 
 function withdraw() {
     document.getElementById("show").innerHTML = "";
-    let withdraw = Number(prompt("Saisissez le montant du retrait"));
+    let withdraw = Number(document.getElementById("textwithdraw").value);
     let check = sold + decouvert - withdraw;
     if (check >= 0) {
         sold = sold - withdraw;
@@ -105,6 +101,7 @@ function withdraw() {
     }
     readtab();
     save("mysold", sold);
+    showform("options", "withdrawContainer");
 }
 
 function agios() {
@@ -145,4 +142,10 @@ function save(myid, myvalue) {
 function signout() {
     localStorage.clear();
     location.reload();
+}
+
+
+function showform(form, hide) {
+    document.getElementById(form).style.display = "flex";
+    document.getElementById(hide).style.display = "none";
 }

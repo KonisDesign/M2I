@@ -23,15 +23,56 @@
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/2560px-Flag_of_the_United_States.svg.png"></a>
         </div>
     </header>
-    <div class="container">
+    <div class="container" id="options">
         <h1 id="title">Bienvenue chez GTM Bank</h1>
-        <button class="start-button" id="open-account-button" onclick="openaccount()">Ouvrir un compte</button>
+        <button class="start-button" id="open-account-button"
+            onclick="showform('openAccountContainer', 'options')">Ouvrir un
+            compte</button>
         <div class="options">
-            <button class="option-button" id="deposit-button" onclick="mydeposit()">Dépôt</button>
-            <button class="option-button" id="withdraw-button" onclick="withdraw()">Retrait</button>
+            <button class="option-button" id="deposit-button"
+                onclick="showform('depositContainer', 'options')">Dépôt</button>
+            <button class="option-button" id="withdraw-button" onclick="showform('withdrawContainer', 'options')">Retrait</button>
             <button class="option-button" id="agios-button" onclick="agios()">Agios</button>
         </div>
         <div id="show"></div>
+    </div>
+    <div class="form-container" id="openAccountContainer">
+        <h1>Ouvrir un compte</h1>
+        <div class="item">
+            <h3>Entrez votre nom et prénom</h3>
+            <input type="text" id="textname" placeholder="Ex: John Doe">
+        </div>
+        <div class="item">
+            <h3>Entrez un découvert si vous en voulez un</h3>
+            <input type="number" id="textdecouvert" placeholder="Ex: 100">
+        </div>
+        <div class="item">
+            <h3>Entrez le montant de votre premier dépôt</h3>
+            <input type="number" id="textfirstdepot" placeholder="Ex: 500">
+        </div>
+        <div class="right">
+            <button class="option-button" style="display: block;" onclick="openaccount()">Ouvrir un compte</button>
+        </div>
+    </div>
+    <div class="form-container" id="depositContainer">
+        <h1>Faire un dépôt</h1>
+        <div class="item">
+            <h3>Entrez le montant de votre dépôt</h3>
+            <input type="number" id="textdepot" placeholder="Ex: 100">
+        </div>
+        <div class="right">
+            <button class="option-button" style="display: block;" onclick="mydeposit()">Envoyer</button>
+        </div>
+    </div>
+    <div class="form-container" id="withdrawContainer">
+        <h1>Faire un retrait</h1>
+        <div class="item">
+            <h3>Entrez le montant de votre retrait</h3>
+            <input type="number" id="textwithdraw" placeholder="Ex: 100">
+        </div>
+        <div class="right">
+            <button class="option-button" style="display: block;" onclick="withdraw()">Envoyer</button>
+        </div>
     </div>
     <div class="tasks-container slide-left" id="tasks-container">
         <h3>Notifications</h3>
