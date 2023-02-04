@@ -39,8 +39,8 @@ if (sold != null && decouvert != null && tasks != null && nameuser != null) {
 
 function openaccount() {
     nameuser = document.getElementById("textname").value;
-    let undecouvert = document.getElementById("textdecouvert").value;
-    if (undecouvert.length > 0) {
+    let undecouvert = Number(document.getElementById("textdecouvert").value);
+    if (undecouvert.length > 0 || undecouvert > 0) {
         tasks.push(getdate() + ": Ajout d'un découvert");
         decouvert = Number(document.getElementById("textdecouvert").value);
         save("mydecouvert", decouvert);
@@ -53,7 +53,7 @@ function openaccount() {
     sold = Number(document.getElementById("textfirstdepot").value);
     tasks.push(getdate() + ": Dépot de " + sold + "€");
     document.getElementById("usersold").innerHTML = "Solde (€): " + sold;
-    document.getElementById("title").innerHTML = "Bienvenue " + nameuser;
+    document.getElementById("title").innerHTML = "Bonjour " + nameuser;
     document.getElementById("open-account-button").style.display = "none";
     document.getElementById("withdraw-button").style.display = "block";
     document.getElementById("deposit-button").style.display = "block";
@@ -107,13 +107,12 @@ function withdraw() {
 function agios() {
     document.getElementById("show").innerHTML = "";
     let day = 0;
-    while (day <= 0 || day > 365) {
-        day = Number(prompt("Entrez le nombre de jour"));
-    }
+    day = Number(document.getElementById("textagios").value);
     let result = (sold * -1) * day * 0.1 / 365;
     tasks.push(getdate() + ": Sur " + day + " Jour(s) vous avez " + result.toFixed(2) + "€ d'intérêts");
     document.getElementById("show").innerHTML = "Agios: " + result.toFixed(2);
     readtab();
+    showform("options", "agiosContainer");
 }
 
 function readtab() {
@@ -149,3 +148,27 @@ function showform(form, hide) {
     document.getElementById(form).style.display = "flex";
     document.getElementById(hide).style.display = "none";
 }
+
+document.getElementById("textagios").addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        agios();
+    }
+});
+
+document.getElementById("textwithdraw").addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        withdraw();
+    }
+});
+
+document.getElementById("textdepot").addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        mydeposit();
+    }
+});
+
+document.getElementById("textfirstdepot").addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        openaccount();
+    }
+});

@@ -14,7 +14,7 @@ body {
 body {
     background: linear-gradient(-45deg, #222831, #1F6F8B, #222831, #1F6F8B);
 	background-size: 400% 400%;
-	animation: gradient 16s ease infinite;
+	animation: gradient 20s ease infinite;
 	height: 100vh;
 }
 
@@ -69,6 +69,30 @@ body {
     word-break: break-word;
     border: 0;
     display: none;
+}
+
+.cancel-button {
+    min-width: 120px;
+    height: auto;
+    background: transparent;
+    border-radius: 999px;
+    box-shadow: #5E5DF0 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 2px solid #5E5DF0;
 }
 
 #signout-button {
@@ -207,6 +231,7 @@ header .infos img {
     margin-top: 40px;
     display: flex;
     justify-content: right;
+    gap: 10px;
 }
 
 @media all and (max-width: 428px) {

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/b9a8cc2a2e.js" crossorigin="anonymous"></script>
     <title>GTM Banque</title>
 </head>
@@ -19,8 +19,6 @@
             <p id="usersold"></p>
             <button class="option-button" id="signout-button" onclick="signout()"><i
                     class="fa-solid fa-right-from-bracket"></i></button>
-            <a href="../en/index.html" id="flag"><img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/2560px-Flag_of_the_United_States.svg.png"></a>
         </div>
     </header>
     <div class="container" id="options">
@@ -32,7 +30,7 @@
             <button class="option-button" id="deposit-button"
                 onclick="showform('depositContainer', 'options')">Dépôt</button>
             <button class="option-button" id="withdraw-button" onclick="showform('withdrawContainer', 'options')">Retrait</button>
-            <button class="option-button" id="agios-button" onclick="agios()">Agios</button>
+            <button class="option-button" id="agios-button" onclick="showform('agiosContainer', 'options')()">Agios</button>
         </div>
         <div id="show"></div>
     </div>
@@ -51,6 +49,7 @@
             <input type="number" id="textfirstdepot" placeholder="Ex: 500">
         </div>
         <div class="right">
+            <button class="cancel-button" onclick="showform('options', 'openAccountContainer')">Annuler</button>
             <button class="option-button" style="display: block;" onclick="openaccount()">Ouvrir un compte</button>
         </div>
     </div>
@@ -61,6 +60,7 @@
             <input type="number" id="textdepot" placeholder="Ex: 100">
         </div>
         <div class="right">
+            <button class="cancel-button" onclick="showform('options', 'depositContainer')">Annuler</button>
             <button class="option-button" style="display: block;" onclick="mydeposit()">Envoyer</button>
         </div>
     </div>
@@ -68,10 +68,22 @@
         <h1>Faire un retrait</h1>
         <div class="item">
             <h3>Entrez le montant de votre retrait</h3>
-            <input type="number" id="textwithdraw" placeholder="Ex: 100">
+            <input type="number" id="textwithdraw" placeholder="Ex: 100" min="10">
         </div>
         <div class="right">
-            <button class="option-button" style="display: block;" onclick="withdraw()">Envoyer</button>
+            <button class="cancel-button" onclick="showform('options', 'withdrawContainer')">Annuler</button>
+            <button class="option-button" style="display: block;" onclick="withdraw()">Retirer</button>
+        </div>
+    </div>
+    <div class="form-container" id="agiosContainer">
+        <h1>Calculez vos agios</h1>
+        <div class="item">
+            <h3>Depuis combien de jours êtes-vous à découvert</h3>
+            <input type="number" id="textagios" placeholder="Ex: 15">
+        </div>
+        <div class="right">
+            <button class="cancel-button" onclick="showform('options', 'agiosContainer')">Annuler</button>
+            <button class="option-button" style="display: block;" onclick="agios()">Calculer</button>
         </div>
     </div>
     <div class="tasks-container slide-left" id="tasks-container">
