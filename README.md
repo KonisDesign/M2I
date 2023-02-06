@@ -2,3 +2,4 @@
  Exos formation M2I
 
 [TP Banque](https://konisdesign.github.io/M2I/TP%20Banque/) <br/>
+[TP HTML / CSS](https://konisdesign.github.io/M2I/TP%20html-css/) <br/>
