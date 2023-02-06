@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>TP html / css</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="principal-content">
+            <h1 id="title">Contenu principal</h1>
+            <p id="paraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.</p>
+            <img id="imageArticle" src="assets/image.jpeg" alt="image">
+        </div>
+        <div class="config-panel">
+            <h2>Panneau de configuration</h2>
+            <h4>Changer la couleur de fond</h4>
+            <input type="color" onchange="backgroundColor(this.value)">
+            <h4>Changer la couleur du titre</h4>
+            <input type="color" onchange="changeColor('title', this.value)">
+            <h4>Changer la couleur du texte</h4>
+            <input type="color" onchange="changeColor('paraph', this.value)">
+            <h4>Saisir du contenu</h4>
+            <textarea onkeyup="changeText('paraph', this.value)" onchange="changeText('paraph', this.value)" placeholder="Saisissez votre contenu à ajouter à la place du contenu principal"></textarea>
+            <h4>Saisir la taille du titre</h4>
+            <input type="number" id="titlesize" onkeyup="changeTextSize('title', this.value)" onchange="changeTextSize('title', this.value)" min="36" max="72" placeholder="Taille du titre entre 36 et 72px" value="36">
+            <h4>Saisir la taille du texte</h4>
+            <input type="number" id="paraphsize" onkeyup="changeTextSize('paraph', this.value)" onchange="changeTextSize('paraph', this.value)" min="12" max="36" placeholder="Taille du texte entre 12 et 36px" value="12">
+            <h4>Alignement du titre</h4>
+            <select id="titleAlign" onchange="getOptionValue('title', 'titleAlign')">
+                <option>Choisir l'alignement du titre</option>
+                <option value="left">Gauche</option>
+                <option value="center">Centré</option>
+                <option value="right">Droite</option>
+            </select>
+            <h4>Alignement du texte</h4>
+            <select id="paraphAlign" onchange="getOptionValue('paraph', 'paraphAlign')">
+                <option>Choisir l'alignement du texte</option>
+                <option value="left">Gauche</option>
+                <option value="center">Centré</option>
+                <option value="right">Droite</option>
+            </select>
+            <h4>Police du titre</h4>
+            <select id="titlefont" onchange="changeFont('title', 'titlefont')">
+                <option>Choisir une font pour le titre</option>
+                <option value="'Roboto', sans-serif">Roboto</option>
+                <option value="'Oswald', sans-serif">Oswald</option>
+            </select>
+            <h4>Police du texte</h4>
+            <select id="paraphfont" onchange="changeFont('paraph', 'paraphfont')">
+                <option>Choisir une font pour le texte</option>
+                <option value="'Roboto', sans-serif">Roboto</option>
+                <option value="'Oswald', sans-serif">Oswald</option>
+            </select>
+            <h4>Lien de l'image</h4>
+            <input type="url" placeholder="source image local ou URL" onkeyup="changeImage(this.value)" onchange="changeImage(this.value)">
+            <div class="upper-lower">
+                <h4>Agrandir, rétrécir l'ensemble</h4>
+                <button onclick="upsize()">A+</button>
+                <button onclick="downsize()">A-</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script type="text/javascript" src="script.js"></script>
