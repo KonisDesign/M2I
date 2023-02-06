@@ -39,30 +39,43 @@ if (sold != null && decouvert != null && tasks != null && nameuser != null) {
 
 function openaccount() {
     nameuser = document.getElementById("textname").value;
-    let undecouvert = Number(document.getElementById("textdecouvert").value);
-    if (undecouvert.length > 0 || undecouvert > 0) {
-        tasks.push(getdate() + ": Ajout d'un découvert");
-        decouvert = Number(document.getElementById("textdecouvert").value);
-        save("mydecouvert", decouvert);
-        document.getElementById("overdraft").innerHTML = "Découvert (€): " + decouvert;
-        tasks.push(getdate() + ": Montant du découvert autorisé: " + decouvert + "€");
+
+    if (nameuser != "" && (Number(document.getElementById("textdecouvert").value) >= 100 || document.getElementById("textdecouvert").value == "") && Number(document.getElementById("textfirstdepot").value) >= 500) {
+        let undecouvert = Number(document.getElementById("textdecouvert").value);
+        if (undecouvert.length > 0 || undecouvert > 0) {
+            tasks.push(getdate() + ": Ajout d'un découvert");
+            decouvert = Number(document.getElementById("textdecouvert").value);
+            save("mydecouvert", decouvert);
+            document.getElementById("overdraft").innerHTML = "Découvert (€): " + decouvert;
+            tasks.push(getdate() + ": Montant du découvert autorisé: " + decouvert + "€");
+        } else {
+            document.getElementById("overdraft").innerHTML = "Découvert: non autorisé";
+            tasks.push(getdate() + ": Pas de découvert autorisé");
+        }
+        sold = Number(document.getElementById("textfirstdepot").value);
+        tasks.push(getdate() + ": Dépot de " + sold + "€");
+        document.getElementById("usersold").innerHTML = "Solde (€): " + sold;
+        document.getElementById("title").innerHTML = "Bonjour " + nameuser;
+        document.getElementById("open-account-button").style.display = "none";
+        document.getElementById("withdraw-button").style.display = "block";
+        document.getElementById("deposit-button").style.display = "block";
+        document.getElementById("signout-button").style.display = "block";
+        document.getElementById("tasks-container").style.display = "flex";
+        showform("options", "openAccountContainer");
+        readtab();
+        save("mysold", sold);
+        save("myname", nameuser);
     } else {
-        document.getElementById("overdraft").innerHTML = "Découvert: non autorisé";
-        tasks.push(getdate() + ": Pas de découvert autorisé");
+        if (nameuser == "") {
+            showerror("errorname", "Veuillez entrer votre nom et prénom");
+        }
+        if (Number(document.getElementById("textdecouvert").value) < 100 && Number(document.getElementById("textdecouvert").value > 0)) {
+            showerror("erroroverdraft", "Veuillez choisir un montant de 100€ ou plus. Vide si vous n'en voulez pas");
+        }
+        if (Number(document.getElementById("textfirstdepot").value < 500)) {
+            showerror("errordeposit", "Veuillez choisir un montant de 500€ ou plus");
+        }
     }
-    sold = Number(document.getElementById("textfirstdepot").value);
-    tasks.push(getdate() + ": Dépot de " + sold + "€");
-    document.getElementById("usersold").innerHTML = "Solde (€): " + sold;
-    document.getElementById("title").innerHTML = "Bonjour " + nameuser;
-    document.getElementById("open-account-button").style.display = "none";
-    document.getElementById("withdraw-button").style.display = "block";
-    document.getElementById("deposit-button").style.display = "block";
-    document.getElementById("signout-button").style.display = "block";
-    document.getElementById("tasks-container").style.display = "flex";
-    showform("options", "openAccountContainer");
-    readtab();
-    save("mysold", sold);
-    save("myname", nameuser);
 }
 
 function mydeposit() {
@@ -147,6 +160,12 @@ function signout() {
 function showform(form, hide) {
     document.getElementById(form).style.display = "flex";
     document.getElementById(hide).style.display = "none";
+}
+
+function showerror(id, message) {
+    document.getElementById(id).style.display = "none";
+    document.getElementById(id).innerHTML = message;
+    document.getElementById(id).style.display = "block";
 }
 
 document.getElementById("textagios").addEventListener("keypress", function (event) {
