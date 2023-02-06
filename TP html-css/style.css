@@ -83,3 +83,24 @@ button {
     align-items: center;
     gap: 10px;
 }
+
+@media all and (max-width: 834px) {
+    img {
+        width: 100%;
+    }
+
+    .container {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .container .principal-content {
+        width: 96%;
+        margin-left: 2%;
+    }
+
+    .container .config-panel {
+        width: 96%;
+        margin-left: 2%;
+    }
+}
