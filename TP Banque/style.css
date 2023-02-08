@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
+html {
+    min-height: 100%;
+    background-image: linear-gradient( 95.2deg, rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% );
+}
+
+
 html,
 body {
     width: 100%;
@@ -7,15 +13,7 @@ body {
     margin: 0;
     overflow-x: 0;
     color: #fff;
-    /*background-color: #222831;*/
     font-family: 'Roboto', sans-serif;
-}
-
-body {
-    background: linear-gradient(-45deg, #222831, #1F6F8B, #222831, #1F6F8B);
-	background-size: 400% 400%;
-	animation: gradient 20s ease infinite;
-	height: 100vh;
 }
 
 .start-button {
@@ -76,9 +74,8 @@ body {
     height: auto;
     background: transparent;
     border-radius: 999px;
-    box-shadow: #5E5DF0 0 10px 20px -10px;
     box-sizing: border-box;
-    color: #FFFFFF;
+    color: #5E5DF0;
     cursor: pointer;
     font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
     font-size: 16px;
@@ -92,12 +89,23 @@ body {
     touch-action: manipulation;
     width: fit-content;
     word-break: break-word;
-    border: 2px solid #5E5DF0;
+    border: 2px none #fff;
 }
 
 #signout-button {
     min-width: 50px;
     display: none;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
 input {
@@ -129,30 +137,30 @@ header .infos {
 
 header #logo {
     width: auto;
-    height: 80px;
-}
-
-header #flag {
-    width: 50px;
-    height: 30px;
+    height: 70px;
+    color: #2f383d;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 900;
 }
 
 header img {
     width: auto;
     height: 100%;
-}
-
-header .infos img {
-    width: 100%;
+    margin-right: 20px;
 }
 
 .container {
-    width: 100%;
+    width: 40%;
     height: auto;
-    margin-top: 200px;
+    margin: 200px 30% 0px 30%;
     display: flex;
     align-items: center;
     flex-direction: column;
+    color: #2f383d;
+    background-color: rgba(236, 244, 247, 0.9);
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.6);
+    border-radius: 10px;
 }
 
 .container .options {
@@ -163,6 +171,10 @@ header .infos img {
     justify-content: center;
     align-items: center;
     gap: 20px;
+}
+
+.container .options i {
+    margin-right: 20px;
 }
 
 #show {
@@ -211,10 +223,15 @@ header .infos img {
 .form-container {
     width: 40%;
     height: auto;
+    padding: 15px 30px;
     margin: 100px 30% 0px 30%;
     display: none;
     align-items: center;
     flex-direction: column;
+    color: #2f383d;
+    background-color: rgba(236, 244, 247, 0.9);
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.6);
+    border-radius: 10px;
 }
 
 .form-container .item {
@@ -223,6 +240,7 @@ header .infos img {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    color: #5b667c;
 }
 
 .right {
@@ -239,6 +257,57 @@ header .infos img {
     display: none;
 }
 
+#start {
+    width: 40%;
+    height: auto;
+    margin: 100px 10%;
+    color: #2f383d;
+}
+
+#start p {
+    color: #5b667c;
+}
+
+#start .start-button i {
+    margin-right: 20px;
+}
+
+#start .advise {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#start .advise img {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+}
+
+#img2 {
+    margin-left: 35px;
+    position: absolute;
+}
+
+#img3 {
+    margin-left: 70px;
+    position: absolute;
+}
+
+#start .advise .note {
+    width: auto;
+    height: auto;
+    margin-left: 100px;
+    justify-content: center;
+}
+
+#start .advise .note .stars i {
+    color: gold;
+}
+
 @media all and (max-width: 428px) {
     header {
         justify-content: right;
@@ -251,6 +320,15 @@ header .infos img {
     .tasks-container {
         width: 90%;
         right: calc(5% - 110px);
+    }
+
+    #tasks-show {
+        max-height: 80px;
+    }
+
+    .form-container {
+        width: 90%;
+        margin: 20px 5% 0px 5%;
     }
 }
 
@@ -266,10 +344,6 @@ header .infos img {
     .container .options {
         flex-wrap: wrap;
     }
-
-    #tasks-show {
-        max-height: 180px;
-    }
 }
 
 @media all and (max-width: 320px) {
@@ -283,6 +357,10 @@ header .infos img {
 
     #tasks-show {
         max-height: 70px;
+    }
+
+    .form-container {
+        margin: 0px 5% 0px 5%;
     }
 }
 
@@ -313,16 +391,4 @@ header .infos img {
         -webkit-transform: translateX(-100px);
         transform: translateX(-100px)
     }
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
 }

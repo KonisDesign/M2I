@@ -1,3 +1,11 @@
+window.addEventListener("resize", (e) => {
+    if (window.innerHeight < 540) {
+        document.getElementById("tasks-container").style.display = "none";
+    } else {
+        document.getElementById("tasks-container").style.display = "flex";
+    }
+})
+
 let decouvert = 0;
 let sold = 0;
 let tasks = [];
@@ -8,33 +16,39 @@ try {
     sold = Number(localStorage.getItem("mysold"));
     tasks = JSON.parse(localStorage.getItem("mytasks"));
     nameuser = localStorage.getItem("myname");
-} catch {
 
-}
-
-if (sold != null && decouvert != null && tasks != null && nameuser != null) {
-    document.getElementById("usersold").innerHTML = "Solde (€): " + sold;
-    if (decouvert == 0) {
-        document.getElementById("overdraft").innerHTML = "Découvert: non autorisé";
+    if (sold != null && decouvert != null && tasks != null && nameuser != null) {
+        document.getElementById("usersold").innerHTML = "Solde (€): " + sold;
+        if (decouvert == 0) {
+            document.getElementById("overdraft").innerHTML = "Découvert: non autorisé";
+        } else {
+            document.getElementById("overdraft").innerHTML = "Découvert (€): " + decouvert;
+        }
+    
+        if (sold < 0) {
+            document.getElementById("agios-button").style.display = "block";
+        }
+    
+        document.getElementById("title").innerHTML = "Bonjour " + nameuser;
+        document.getElementById("open-account-button").style.display = "none";
+        document.getElementById("withdraw-button").style.display = "block";
+        document.getElementById("deposit-button").style.display = "block";
+        document.getElementById("signout-button").style.display = "block";
+        document.getElementById("tasks-container").style.display = "flex";
+        readtab();
     } else {
-        document.getElementById("overdraft").innerHTML = "Découvert (€): " + decouvert;
+        decouvert = 0;
+        sold = 0;
+        tasks = [];
+        try {
+            document.getElementById("startlink").innerHTML = "Ouvrir un compte";
+        } catch {
+
+        }
+        showform('openAccountContainer', 'options');
     }
 
-    if (sold < 0) {
-        document.getElementById("agios-button").style.display = "block";
-    }
-
-    document.getElementById("title").innerHTML = "Bonjour " + nameuser;
-    document.getElementById("open-account-button").style.display = "none";
-    document.getElementById("withdraw-button").style.display = "block";
-    document.getElementById("deposit-button").style.display = "block";
-    document.getElementById("signout-button").style.display = "block";
-    document.getElementById("tasks-container").style.display = "flex";
-    readtab();
-} else {
-    decouvert = 0;
-    sold = 0;
-    tasks = [];
+} catch {
 }
 
 function openaccount() {
@@ -168,26 +182,30 @@ function showerror(id, message) {
     document.getElementById(id).style.display = "block";
 }
 
-document.getElementById("textagios").addEventListener("keypress", function (event) {
-    if (event.key === "Enter") {
-        agios();
-    }
-});
-
-document.getElementById("textwithdraw").addEventListener("keypress", function (event) {
-    if (event.key === "Enter") {
-        withdraw();
-    }
-});
-
-document.getElementById("textdepot").addEventListener("keypress", function (event) {
-    if (event.key === "Enter") {
-        mydeposit();
-    }
-});
-
-document.getElementById("textfirstdepot").addEventListener("keypress", function (event) {
-    if (event.key === "Enter") {
-        openaccount();
-    }
-});
+try {
+    document.getElementById("textagios").addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            agios();
+        }
+    });
+    
+    document.getElementById("textwithdraw").addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            withdraw();
+        }
+    });
+    
+    document.getElementById("textdepot").addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            mydeposit();
+        }
+    });
+    
+    document.getElementById("textfirstdepot").addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            openaccount();
+        }
+    });
+} catch {
+    
+}

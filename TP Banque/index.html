@@ -1,99 +1,42 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/b9a8cc2a2e.js" crossorigin="anonymous"></script>
-    <title>GTM Banque</title>
+    <title>GTM Bank</title>
 </head>
-
 <body>
     <header>
         <a href="#" id="logo"><img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Android_O_Preview_Logo.png/1024px-Android_O_Preview_Logo.png"></a>
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Android_O_Preview_Logo.png/1024px-Android_O_Preview_Logo.png"> GTM Bank</a>
         <div class="infos">
-            <p id="overdraft"></p>
-            <p id="usersold"></p>
-            <button class="option-button" id="signout-button" onclick="signout()"><i
-                    class="fa-solid fa-right-from-bracket"></i></button>
+            <a class="start-button" id="startlink" href="account.html">Mon compte</a>
         </div>
     </header>
-    <div class="container" id="options">
-        <h1 id="title">Bienvenue chez GTM Bank</h1>
-        <button class="start-button" id="open-account-button"
-            onclick="showform('openAccountContainer', 'options')">Ouvrir un
-            compte</button>
-        <div class="options">
-            <button class="option-button" id="deposit-button"
-                onclick="showform('depositContainer', 'options')">Dépôt</button>
-            <button class="option-button" id="withdraw-button" onclick="showform('withdrawContainer', 'options')">Retrait</button>
-            <button class="option-button" id="agios-button" onclick="showform('agiosContainer', 'options')()">Agios</button>
+    <section id="start">
+        <h1>Le meilleur choix<br>pour une banque<br>en ligne</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus varius aliquam. Sed malesuada est nec fringilla finibus. Donec maximus.</p>
+        <a class="start-button" id="startlink" href="account.html"><i class="fa-solid fa-credit-card"></i>Les cartes</a>
+        <div class="advise">
+            <img id="img1" src="assets/avatar1.png">
+            <img id="img2" src="assets/avatar2.png">
+            <img id="img3" src="assets/avatar3.png">
+            <div class="note">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p>Plus de <b>2K</b> d'utilisateurs actifs</p>
+            </div>
         </div>
-        <div id="show"></div>
-    </div>
-    <div class="form-container" id="openAccountContainer">
-        <h1>Ouvrir un compte</h1>
-        <div class="item">
-            <h3>Entrez votre nom et prénom</h3>
-            <input type="text" id="textname" placeholder="Ex: John Doe">
-            <div id="errorname" class="error"></div>
-        </div>
-        <div class="item">
-            <h3>Entrez un découvert si vous en voulez un</h3>
-            <input type="number" id="textdecouvert" placeholder="Ex: 100" max="2000">
-            <div id="erroroverdraft" class="error"></div>
-        </div>
-        <div class="item">
-            <h3>Entrez le montant de votre premier dépôt</h3>
-            <input type="number" id="textfirstdepot" placeholder="Ex: 500" min="500">
-            <div id="errordeposit" class="error"></div>
-        </div>
-        <div class="right">
-            <button class="cancel-button" onclick="showform('options', 'openAccountContainer')">Annuler</button>
-            <button class="option-button" style="display: block;" onclick="openaccount()">Ouvrir un compte</button>
-        </div>
-    </div>
-    <div class="form-container" id="depositContainer">
-        <h1>Faire un dépôt</h1>
-        <div class="item">
-            <h3>Entrez le montant de votre dépôt</h3>
-            <input type="number" id="textdepot" placeholder="Ex: 100">
-        </div>
-        <div class="right">
-            <button class="cancel-button" onclick="showform('options', 'depositContainer')">Annuler</button>
-            <button class="option-button" style="display: block;" onclick="mydeposit()">Envoyer</button>
-        </div>
-    </div>
-    <div class="form-container" id="withdrawContainer">
-        <h1>Faire un retrait</h1>
-        <div class="item">
-            <h3>Entrez le montant de votre retrait</h3>
-            <input type="number" id="textwithdraw" placeholder="Ex: 100" min="10">
-        </div>
-        <div class="right">
-            <button class="cancel-button" onclick="showform('options', 'withdrawContainer')">Annuler</button>
-            <button class="option-button" style="display: block;" onclick="withdraw()">Retirer</button>
-        </div>
-    </div>
-    <div class="form-container" id="agiosContainer">
-        <h1>Calculez vos agios</h1>
-        <div class="item">
-            <h3>Depuis combien de jours êtes-vous à découvert</h3>
-            <input type="number" id="textagios" placeholder="Ex: 15">
-        </div>
-        <div class="right">
-            <button class="cancel-button" onclick="showform('options', 'agiosContainer')">Annuler</button>
-            <button class="option-button" style="display: block;" onclick="agios()">Calculer</button>
-        </div>
-    </div>
-    <div class="tasks-container slide-left" id="tasks-container">
-        <h3>Notifications</h3>
-        <div id="tasks-show"></div>
-    </div>
+    </section>
 </body>
-
 </html>
-<script src="script.js"></script>
+
+<script type="text/javascript" src="script.js"></script>
