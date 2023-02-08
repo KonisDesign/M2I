@@ -1,5 +1,5 @@
 window.addEventListener("resize", (e) => {
-    if (window.innerHeight < 540) {
+    if (window.innerHeight < 600) {
         document.getElementById("tasks-container").style.display = "none";
     } else {
         document.getElementById("tasks-container").style.display = "flex";
@@ -207,5 +207,5 @@ try {
         }
     });
 } catch {
-    
+
 }
