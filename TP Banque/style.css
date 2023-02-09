@@ -174,8 +174,9 @@ header img {
     align-items: center;
     flex-direction: column;
     color: #2f383d;
-    background-color: rgba(236, 244, 247, 0.9);
+    background-color: #fff;
     border-radius: 10px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .container .options {
@@ -244,8 +245,13 @@ header img {
     align-items: center;
     flex-direction: column;
     color: #2f383d;
-    background-color: rgba(236, 244, 247, 0.9);
+    background-color:#fff;
     border-radius: 10px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h3 {
+    font-size: 20px;
 }
 
 .form-container .item {
