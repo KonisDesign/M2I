@@ -583,6 +583,7 @@ footer .line {
         width: 100%;
         margin-left: 0px;
         background-color: transparent;
+        box-shadow: none;
     }
 
     .tasks-container {
@@ -598,6 +599,7 @@ footer .line {
         width: 90%;
         margin: 20px calc(5% - 30px);
         background-color: transparent;
+        box-shadow: none;
     }
 
     #start {
