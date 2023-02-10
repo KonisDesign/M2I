@@ -57,7 +57,7 @@ try {
 function openaccount() {
     nameuser = document.getElementById("textname").value;
 
-    if (nameuser != "" && (Number(document.getElementById("textdecouvert").value) >= 100 || document.getElementById("textdecouvert").value == "") && Number(document.getElementById("textfirstdepot").value) >= 500) {
+    if (nameuser != "" && ((Number(document.getElementById("textdecouvert").value) >= 100 && Number(document.getElementById("textdecouvert").value) <= 2000) || document.getElementById("textdecouvert").value == "") && Number(document.getElementById("textfirstdepot").value) >= 500) {
         let undecouvert = Number(document.getElementById("textdecouvert").value);
         if (undecouvert.length > 0 || undecouvert > 0) {
             tasks.push(getdate() + ": Ajout d'un découvert");
@@ -88,12 +88,18 @@ function openaccount() {
     } else {
         if (nameuser == "") {
             showerror("errorname", "Veuillez entrer votre nom et prénom");
+        } else {
+            showerror("errorname", "");
         }
-        if (Number(document.getElementById("textdecouvert").value) < 100 && Number(document.getElementById("textdecouvert").value > 0)) {
+        if (Number(document.getElementById("textdecouvert").value) >= 100 && Number(document.getElementById("textdecouvert").value <= 2000)) {
+            showerror("erroroverdraft", "");
+        } else {
             showerror("erroroverdraft", "Veuillez choisir un montant de 100€ ou plus. Vide si vous n'en voulez pas");
         }
         if (Number(document.getElementById("textfirstdepot").value < 500)) {
             showerror("errordeposit", "Veuillez choisir un montant de 500€ ou plus");
+        } else {
+            showerror("errordeposit", "");
         }
     }
 }
