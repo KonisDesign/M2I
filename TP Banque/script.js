@@ -131,6 +131,8 @@ function withdraw() {
     if (sold < 0) {
         document.getElementById("agios-button").style.display = "block";
         tasks.push(getdate() + ": Vous êtes à découvert");
+    } else {
+        document.getElementById("agios-button").style.display = "none";
     }
     readtab();
     save("mysold", sold);

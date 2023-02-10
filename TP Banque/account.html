@@ -50,12 +50,12 @@
         </div>
         <div class="item">
             <h3>Entrez un découvert si vous en voulez un</h3>
-            <input type="number" id="textdecouvert" placeholder="Ex: 100" max="2000">
+            <input type="number" id="textdecouvert" placeholder="Ex: 100" max="2000" step="100">
             <div id="erroroverdraft" class="error"></div>
         </div>
         <div class="item">
             <h3>Entrez le montant de votre premier dépôt</h3>
-            <input type="number" id="textfirstdepot" placeholder="Ex: 500" min="500">
+            <input type="number" id="textfirstdepot" placeholder="Ex: 500" min="500" step="100">
             <div id="errordeposit" class="error"></div>
         </div>
         <div class="item">
@@ -67,7 +67,7 @@
             </select>
         </div>
         <div class="right">
-            <button class="cancel-button" onclick="showform('options', 'openAccountContainer')">Annuler</button>
+            <button class="cancel-button" onclick="location.href='index.html'">Annuler</button>
             <button class="option-button" style="display: block;" onclick="openaccount()">Ouvrir un compte</button>
         </div>
     </div>
@@ -75,7 +75,7 @@
         <h2>Faire un dépôt</h2>
         <div class="item">
             <h3>Entrez le montant de votre dépôt</h3>
-            <input type="number" id="textdepot" placeholder="Ex: 100">
+            <input type="number" id="textdepot" placeholder="Ex: 100" step="10">
         </div>
         <div class="right">
             <button class="cancel-button" onclick="showform('options', 'depositContainer')">Annuler</button>
@@ -86,7 +86,7 @@
         <h2>Faire un retrait</h2>
         <div class="item">
             <h3>Entrez le montant de votre retrait</h3>
-            <input type="number" id="textwithdraw" placeholder="Ex: 100" min="10">
+            <input type="number" id="textwithdraw" placeholder="Ex: 100" min="10" step="10">
         </div>
         <div class="right">
             <button class="cancel-button" onclick="showform('options', 'withdrawContainer')">Annuler</button>
