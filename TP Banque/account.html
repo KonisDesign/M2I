@@ -13,7 +13,8 @@
 <body>
     <header>
         <a href="index.html" class="logo"><img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Android_O_Preview_Logo.png/1024px-Android_O_Preview_Logo.png"> GTM Bank</a>
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Android_O_Preview_Logo.png/1024px-Android_O_Preview_Logo.png">
+            GTM Bank</a>
         <div class="infos">
             <p id="overdraft"></p>
             <p id="usersold"></p>
@@ -26,11 +27,17 @@
         <button class="start-button" id="open-account-button"
             onclick="showform('openAccountContainer', 'options')">Ouvrir un
             compte</button>
+        <div class="card-container">
+            <img src="#" alt="credit card" id="mycreditcard">
+            <button style="display: block;" class="option-button" id="call-button"><i class="fa-brands fa-cc-visa"></i>Renouveler</button>
+        </div>
         <div class="options">
-            <button class="option-button" id="deposit-button"
-                onclick="showform('depositContainer', 'options')"><i class="fa-solid fa-money-bill-transfer"></i>Dépôt</button>
-            <button class="option-button" id="withdraw-button" onclick="showform('withdrawContainer', 'options')"><i class="fa-solid fa-credit-card"></i>Retrait</button>
-            <button class="option-button" id="agios-button" onclick="showform('agiosContainer', 'options')()"><i class="fa-solid fa-coins"></i>Agios</button>
+            <button class="option-button" id="deposit-button" onclick="showform('depositContainer', 'options')"><i
+                    class="fa-solid fa-money-bill-transfer"></i>Dépôt</button>
+            <button class="option-button" id="withdraw-button" onclick="showform('withdrawContainer', 'options')"><i
+                    class="fa-solid fa-credit-card"></i>Retrait</button>
+            <button class="option-button" id="agios-button" onclick="showform('agiosContainer', 'options')()"><i
+                    class="fa-solid fa-coins"></i>Agios</button>
         </div>
         <div id="show"></div>
     </div>
@@ -50,6 +57,14 @@
             <h3>Entrez le montant de votre premier dépôt</h3>
             <input type="number" id="textfirstdepot" placeholder="Ex: 500" min="500">
             <div id="errordeposit" class="error"></div>
+        </div>
+        <div class="item">
+            <h3>Choisissez votre carte</h3>
+            <select id="creditcard">
+                <option value="green">Green</option>
+                <option value="silver">Silver</option>
+                <option value="black">Black</option>
+            </select>
         </div>
         <div class="right">
             <button class="cancel-button" onclick="showform('options', 'openAccountContainer')">Annuler</button>

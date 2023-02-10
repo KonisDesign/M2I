@@ -49,6 +49,7 @@ body {
 
 .option-button {
     min-width: 120px;
+    width: auto;
     height: auto;
     background: #5E5DF0;
     border-radius: 999px;
@@ -169,9 +170,9 @@ header img {
 }
 
 .container {
-    width: 40%;
+    width: 50%;
     height: auto;
-    margin: 200px 30% 0px 30%;
+    margin: 100px 30% 0px 30%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -179,6 +180,22 @@ header img {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    block-size: fit-content;
+
+    .card-container {
+        width: 80%;
+        height: auto;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        #mycreditcard {
+            width: 40%;
+            height: auto;
+            border-radius: 10px;
+        }
+    }
 
     .options {
         width: 90%;
@@ -188,10 +205,10 @@ header img {
         justify-content: center;
         align-items: center;
         gap: 20px;
+    }
 
-        i {
-            margin-right: 20px;
-        }
+    i {
+        margin-right: 20px;
     }
 }
 
@@ -243,7 +260,7 @@ header img {
     width: 40%;
     height: auto;
     padding: 15px 30px;
-    margin: 100px 30% 0px 30%;
+    margin: 80px 30% 30px 30%;
     display: none;
     align-items: center;
     flex-direction: column;
@@ -263,6 +280,12 @@ header img {
         flex-direction: column;
         align-items: flex-start;
         color: $color;
+
+        #creditcard {
+            width: 100px;
+            font-size: 20px;
+            border: none;
+        }
     }
 } 
 
@@ -567,6 +590,11 @@ footer {
         }
     }
 
+    .container {
+        width: 80%;
+        margin-left: 10%;
+    }
+
     #special-card {
         margin-top: 0px;
     }
@@ -599,9 +627,18 @@ footer {
 
     .container {
         width: 100%;
-        margin-left: 0px;
+        margin: 0px;
         background-color: transparent;
         box-shadow: none;
+
+        .options {
+            flex-wrap: wrap;
+        }
+
+        .card-container {
+            flex-direction: column;
+            gap: 10px;
+        }
     }
 
     .tasks-container {
@@ -659,15 +696,11 @@ footer {
     }
 
     .container {
-        margin-top: 100px;
+        margin-top: 30px;
     }
 
     .container h1 {
         font-size: 1.6rem;
-    }
-
-    .container .options {
-        flex-wrap: wrap;
     }
 }
 
@@ -677,11 +710,11 @@ footer {
     }
 
     .container {
-        margin-top: 50px;
-    }
+        margin-top: 0px;
 
-    #tasks-show {
-        max-height: 70px;
+        .card-container {
+            display: none;
+        }
     }
 
     .form-container {

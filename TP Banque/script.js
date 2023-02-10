@@ -10,12 +10,14 @@ let decouvert = 0;
 let sold = 0;
 let tasks = [];
 let nameuser = "";
+let card = "";
 
 try {
     decouvert = Number(localStorage.getItem("mydecouvert"));
     sold = Number(localStorage.getItem("mysold"));
     tasks = JSON.parse(localStorage.getItem("mytasks"));
     nameuser = localStorage.getItem("myname");
+    card = localStorage.getItem("mycard");
 
     if (sold != null && decouvert != null && tasks != null && nameuser != null) {
         document.getElementById("usersold").innerHTML = "Solde (€): " + sold;
@@ -35,6 +37,7 @@ try {
         document.getElementById("deposit-button").style.display = "block";
         document.getElementById("signout-button").style.display = "block";
         document.getElementById("tasks-container").style.display = "flex";
+        document.getElementById("mycreditcard").src = "assets/" + card + ".jpeg"
         readtab();
     } else {
         decouvert = 0;
@@ -67,6 +70,7 @@ function openaccount() {
             tasks.push(getdate() + ": Pas de découvert autorisé");
         }
         sold = Number(document.getElementById("textfirstdepot").value);
+        card = document.getElementById("creditcard").value;
         tasks.push(getdate() + ": Dépot de " + sold + "€");
         document.getElementById("usersold").innerHTML = "Solde (€): " + sold;
         document.getElementById("title").innerHTML = "Bonjour " + nameuser;
@@ -75,10 +79,12 @@ function openaccount() {
         document.getElementById("deposit-button").style.display = "block";
         document.getElementById("signout-button").style.display = "block";
         document.getElementById("tasks-container").style.display = "flex";
+        document.getElementById("mycreditcard").src = "assets/" + card + ".jpeg"
         showform("options", "openAccountContainer");
         readtab();
         save("mysold", sold);
         save("myname", nameuser);
+        save("mycard", card);
     } else {
         if (nameuser == "") {
             showerror("errorname", "Veuillez entrer votre nom et prénom");
