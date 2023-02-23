@@ -9,7 +9,17 @@
 </head>
 <body>
     <div class="container">
-
+        <h1>Le nombre mystère</h1>
+        <h3 id="first">J'ai généré un nombre entre 1 et 50 inclus</h3>
+        <h3 id="second">Essayez de le deviner en proposant ci-dessous</h3>
+        <div class="row">
+            <p id="stroke">Nombre de coups : 0</p>
+            <input type="number" id="myinput" min="1" max="50" value="25">
+            <button id="check" onclick="check()">Valider</button>
+        </div>
+        <button id="replay" onclick="window.location.reload();">Rejouer</button>
     </div>
 </body>
 </html>
+
+<script type="text/javascript" src="script.js"></script>
