@@ -1,0 +1,22 @@
+{
+  "name": "first_project",
+  "version": "1.0.0",
+  "description": "Premier projet",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "npx nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Julien",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "ip": "^1.1.8"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
