@@ -1,0 +1,33 @@
+.formation {
+    margin: 10px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+img {
+    margin: 0 -20px;
+}
+
+.category {
+    height: 40px;
+    margin: 20px auto;
+}
+
+.difficulty {
+    display: flex;
+    margin: 0 auto 15px auto;
+}
+
+.diff-label {
+    margin-top: 3px;
+    margin-right: 10px;
+}
+
+.price {
+    font-size: larger;
+}
+
+.strong {
+    font-weight: bold;
+    font-size: 25px;
+}

@@ -1,0 +1,31 @@
+.relative {
+    position: relative;
+}
+
+.spaced {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.cart-list {
+    width: 300px;
+    color: #fff;
+    background-color: rgb(40, 44, 52);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.over {
+    position: absolute;
+    top: 0;
+    left: 100px;
+    z-index: 1;
+}
+
+.space-top {
+    margin: 20px 0px;
+}
+
+.vide {
+    margin-bottom: 20px;
+}

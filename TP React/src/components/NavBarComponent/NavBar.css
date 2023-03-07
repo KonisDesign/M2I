@@ -1,0 +1,19 @@
+#navbar {
+    background-color: rgb(173, 66, 66);
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    background-color: rgb(40,44,52);
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 0 15px;
+}
+
+.button a {
+    color: white;
+    text-decoration: none;
+}

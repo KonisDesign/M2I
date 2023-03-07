@@ -1,0 +1,16 @@
+.author {
+    color: rgb(71, 71,71);
+}
+
+.img {
+    height: 300px;
+    border-radius: 25px;
+}
+
+.key {
+    font-weight: bold;
+}
+
+.value {
+    font-style: italic;
+}

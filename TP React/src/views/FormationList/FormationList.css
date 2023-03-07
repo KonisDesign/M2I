@@ -1,0 +1,12 @@
+.formation-list  {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.formation-list {
+    color: rgb(40,40,40);
+}
